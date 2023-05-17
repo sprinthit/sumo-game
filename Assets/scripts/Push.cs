@@ -8,7 +8,7 @@ public class Push : MonoBehaviour
 
     public void MoveUp()
     {
-        if(!PauseMenu.isPaused)
+        if(!PauseMenu.isPaused&&!CountDown.isPaused)
         {
             print("timescle" + Time.timeScale);
             transform.position += Vector3.up * moveSpeed * Time.deltaTime;

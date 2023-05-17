@@ -5,13 +5,13 @@ using UnityEngine;
 public class AI : MonoBehaviour
 {
     public float moveSpeed = 0.7f;
-    public float moveDelay = 0.5f; // Delay between each move in seconds
+    public float moveDelay = 0.5f; 
 
     private IEnumerator MoveCoroutine()
     {
         while (true)
         {
-            if (!PauseMenu.isPaused)
+            if (!PauseMenu.isPaused&&!CountDown.isPaused)
             {
                 transform.position += Vector3.up * -moveSpeed * Time.deltaTime;
             }

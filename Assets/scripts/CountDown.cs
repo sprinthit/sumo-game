@@ -5,52 +5,32 @@ using UnityEngine.UI;
 
 public class CountDown : MonoBehaviour
 {
-    public float countdownTime = 10.0f;
     
-    public GameObject[] gameObjectsToDisable;
-    public MonoBehaviour[] scriptsToDisable;
+    public Text countdownDisplay;
+    public static bool isPaused = true;
 
-    void Start()
+    private void Start()
     {
-        // Disable game objects and scripts at the start of the game
-        foreach (GameObject gameObject in gameObjectsToDisable)
-        {
-            gameObject.SetActive(false);
-        }
-
-        foreach (MonoBehaviour script in scriptsToDisable)
-        {
-            script.enabled = false;
-        }
-
-        // Start countdown timer coroutine
-        StartCoroutine(Countdown());
+        StartCoroutine(countdownToStart());
     }
 
-    IEnumerator Countdown()
+    IEnumerator countdownToStart()
     {
-        while (countdownTime > 0)
-        {
-            // Decrease countdown time by Time.deltaTime each frame
-            countdownTime -= Time.deltaTime;
+        countdownDisplay.text = "3";
+        yield return new WaitForSeconds(1);
+       
+        countdownDisplay.text = "2";
+        yield return new WaitForSeconds(1);
+        
+        countdownDisplay.text = "1";
+        yield return new WaitForSeconds(1);
+        
+        countdownDisplay.text = "GO";
+        yield return new WaitForSeconds(1);
 
-           
+        countdownDisplay.gameObject.SetActive(false);
+        isPaused = false;
 
-            // Wait for 1 second before continuing the countdown
-            yield return new WaitForSeconds(1);
-        }
-
-        // Enable game objects and scripts when countdown is complete
-        foreach (GameObject gameObject in gameObjectsToDisable)
-        {
-            gameObject.SetActive(true);
-        }
-
-        foreach (MonoBehaviour script in scriptsToDisable)
-        {
-            script.enabled = true;
-        }
     }
 
 }
-

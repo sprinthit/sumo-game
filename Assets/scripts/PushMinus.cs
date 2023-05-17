@@ -8,7 +8,7 @@ public class PushMinus : MonoBehaviour
 
     public void MoveUp()
     { 
-        if(!PauseMenu.isPaused)
+        if(!PauseMenu.isPaused&&!CountDown.isPaused)
         {
             transform.position += Vector3.up * -movespeed * Time.deltaTime;
 
