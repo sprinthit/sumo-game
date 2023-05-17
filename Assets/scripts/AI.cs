@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class AI : MonoBehaviour
 {
-    public float moveSpeed = 20f;
+    public float moveSpeed = 0.7f;
+    public float moveDelay = 0.5f; // Delay between each move in seconds
 
-    private void Update()
+    private IEnumerator MoveCoroutine()
     {
-        if(!PauseMenu.isPaused)
+        while (true)
         {
-            transform.position += Vector3.up * -moveSpeed * Time.deltaTime;
-
+            if (!PauseMenu.isPaused)
+            {
+                transform.position += Vector3.up * -moveSpeed * Time.deltaTime;
+            }
+            yield return new WaitForSeconds(moveDelay);
         }
+    }
+
+    private void Start()
+    {
+        StartCoroutine(MoveCoroutine());
     }
 }

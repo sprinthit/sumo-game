@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Playerout : MonoBehaviour
 {
-    public GameObject textPrefab;
+    public GameObject panelPrefab;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("P1"))
         {
             Time.timeScale = 0f;
-            textPrefab.SetActive(true);
+            panelPrefab.SetActive(true);
+            
         }
     }
 }

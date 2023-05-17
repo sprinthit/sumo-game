@@ -8,6 +8,7 @@ TagManager:
   - P2
   - P1
   - Ai
+  - 'player 1 won '
   layers:
   - Default
   - TransparentFX
