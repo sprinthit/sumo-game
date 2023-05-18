@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class PushMinus : MonoBehaviour
 {
-    public float movespeed = 20f;
+    public float moveSpeed = 20f;
+    private Rigidbody2D rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     public void MoveUp()
-    { 
-        if(!PauseMenu.isPaused&&!CountDown.isPaused)
+    {
+        if (!PauseMenu.isPaused && !CountDown.isPaused)
         {
-            transform.position += Vector3.up * -movespeed * Time.deltaTime;
-
+            rb.position += Vector2.up * -moveSpeed * Time.deltaTime;
         }
     }
 }

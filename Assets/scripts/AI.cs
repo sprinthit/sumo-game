@@ -5,7 +5,13 @@ using UnityEngine;
 public class AI : MonoBehaviour
 {
     public float moveSpeed = 0.7f;
-    public float moveDelay = 0.5f; 
+    public float moveDelay = 0.5f;
+    Rigidbody2D rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     private IEnumerator MoveCoroutine()
     {
@@ -13,7 +19,7 @@ public class AI : MonoBehaviour
         {
             if (!PauseMenu.isPaused&&!CountDown.isPaused)
             {
-                transform.position += Vector3.up * -moveSpeed * Time.deltaTime;
+                rb.position += Vector2.up * -moveSpeed * Time.deltaTime;
             }
             yield return new WaitForSeconds(moveDelay);
         }

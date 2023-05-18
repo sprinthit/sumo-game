@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class Push : MonoBehaviour
 {
-    public float moveSpeed = 20f; 
+    public float moveSpeed = 20f;
+    Rigidbody2D rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     public void MoveUp()
     {
-        if(!PauseMenu.isPaused&&!CountDown.isPaused)
+        if (!PauseMenu.isPaused && !CountDown.isPaused)
         {
-            print("timescle" + Time.timeScale);
-            transform.position += Vector3.up * moveSpeed * Time.deltaTime;
-            
-
+            rb.position += Vector2.up * moveSpeed * Time.deltaTime;
         }
     }
 }

@@ -1109,7 +1109,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6640485220444733103}
+      - m_Target: {fileID: 6640485220444733105}
         m_TargetAssemblyTypeName: PushMinus, Assembly-CSharp
         m_MethodName: MoveUp
         m_Mode: 1
@@ -3937,8 +3937,8 @@ GameObject:
   - component: {fileID: 6640485220444733099}
   - component: {fileID: 6640485220444733098}
   - component: {fileID: 6640485220444733100}
-  - component: {fileID: 6640485220444733103}
   - component: {fileID: 6640485220444733104}
+  - component: {fileID: 6640485220444733105}
   m_Layer: 0
   m_Name: Character 2-min
   m_TagString: P2
@@ -3946,19 +3946,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &6640485220444733103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6640485220444733102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc44f77f70c2386429b3de98da0daf72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movespeed: 20
 --- !u!50 &6640485220444733104
 Rigidbody2D:
   serializedVersion: 4
@@ -3980,6 +3967,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 5
+--- !u!114 &6640485220444733105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6640485220444733102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc44f77f70c2386429b3de98da0daf72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 20
 --- !u!50 &6661012114681112600
 Rigidbody2D:
   serializedVersion: 4
