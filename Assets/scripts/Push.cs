@@ -12,6 +12,7 @@ public class Push : MonoBehaviour
         {
             print("timescle" + Time.timeScale);
             transform.position += Vector3.up * moveSpeed * Time.deltaTime;
+            
 
         }
     }
