@@ -16,7 +16,8 @@ public class PauseMenu : MonoBehaviour
     }
    
     public void PauseGame()
-    { 
+    {
+        CountDown.isPaused = true;
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
