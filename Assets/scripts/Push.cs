@@ -16,7 +16,8 @@ public class Push : MonoBehaviour
     {
         if (!PauseMenu.isPaused && !CountDown.isPaused)
         {
-            rb.position += Vector2.up * moveSpeed * Time.deltaTime;
+            Vector2 newPosition = rb.position + Vector2.up * moveSpeed * Time.deltaTime;
+            rb.MovePosition(newPosition);
         }
     }
 }

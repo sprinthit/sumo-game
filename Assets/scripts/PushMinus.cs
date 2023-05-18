@@ -5,7 +5,7 @@ using UnityEngine;
 public class PushMinus : MonoBehaviour
 {
     public float moveSpeed = 20f;
-    private Rigidbody2D rb;
+    Rigidbody2D rb;
 
     private void Start()
     {
@@ -16,7 +16,8 @@ public class PushMinus : MonoBehaviour
     {
         if (!PauseMenu.isPaused && !CountDown.isPaused)
         {
-            rb.position += Vector2.up * -moveSpeed * Time.deltaTime;
+            Vector2 newPosition = rb.position + Vector2.up * -moveSpeed * Time.deltaTime;
+            rb.MovePosition(newPosition);
         }
     }
 }
